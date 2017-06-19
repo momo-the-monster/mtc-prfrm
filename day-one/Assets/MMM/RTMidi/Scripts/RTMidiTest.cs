@@ -10,6 +10,8 @@ namespace MMM.RTMidi.Demo
     public class RTMidiTest : MidiBehaviour
     {
 
+        public int portIndexToOpen;
+
         private void Start()
         {
             // Create a port to use
@@ -44,7 +46,7 @@ namespace MMM.RTMidi.Demo
         [ExposeMethodInEditor]
         void OpenPort()
         {
-            plugin.OpenPort(0);
+            plugin.OpenPort(portIndexToOpen);
         }
 
         [ExposeMethodInEditor]

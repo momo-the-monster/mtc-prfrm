@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MMM.RTMidi.Demo
+namespace MMM.RTMidi
 {
     public class MidiBehaviour : MonoBehaviour
     {
 
-        public RTMidiPlugin plugin;
+        internal RTMidiPlugin plugin;
 
         #region Convenience Methods
         public static float GetNormalizedNote(int note)
@@ -57,6 +57,27 @@ namespace MMM.RTMidi.Demo
         {
             UnityMainThreadDispatcher.Enqueue(() => HandleNoteOn(channel, note, velocity));
         }
+
+        #endregion
+
+        #region Animation
+
+        [Serializable]
+        public struct ADSR
+        {
+            public float attack;
+            public float decay;
+            public float sustain;
+            public float release;
+
+            float a { get { return attack; } }
+            float d { get { return decay; } }
+            float s { get { return sustain; } }
+            float r { get { return release; } }
+        }
+
+        [SerializeField]
+        public ADSR timing;
 
         #endregion
 

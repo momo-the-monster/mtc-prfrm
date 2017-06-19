@@ -19,6 +19,7 @@ namespace MMM.RTMidi
         public const byte MD_CHANNELMASK = 0x0F;
         public const byte MD_STATUSMASK = 0xF0;
 
+        public int autoOpenPort = -1;
         public const string PluginName = "RTMidiUnity";
         public delegate void DataCallback(byte status, byte data1, byte data2);
         private DataCallback m_DataCallback;
@@ -66,7 +67,10 @@ namespace MMM.RTMidi
             m_DataCallback = new DataCallback(OnDataCallback);
             SetCallback(m_DataCallback);
             Debug.LogFormat("Setup: {0}", Setup());
-            OpenPort(0);
+            if(autoOpenPort > -1)
+            {
+                OpenPort(autoOpenPort);
+            }
         }
 
         void OnDataCallback(byte status, byte data1, byte data2)
@@ -140,6 +144,7 @@ namespace MMM.RTMidi
 
         void Teardown()
         {
+            Debug.LogFormat("Called Teardown");
             SetCallback(null);
             m_DataCallback = null;
             ClosePort();
