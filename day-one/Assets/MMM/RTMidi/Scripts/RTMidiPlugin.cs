@@ -67,6 +67,14 @@ namespace MMM.RTMidi
             m_DataCallback = new DataCallback(OnDataCallback);
             SetCallback(m_DataCallback);
             Debug.LogFormat("Setup: {0}", Setup());
+
+            // Print all port names to console
+            var portNames = GetPortNames();
+            foreach (var portName in portNames)
+            {
+                Debug.LogFormat("{0}", portName);
+            }
+
             if(autoOpenPort > -1)
             {
                 OpenPort(autoOpenPort);
@@ -144,11 +152,10 @@ namespace MMM.RTMidi
 
         void Teardown()
         {
-            Debug.LogFormat("Called Teardown");
             SetCallback(null);
             m_DataCallback = null;
             ClosePort();
-            RTTeardown();
+         //   RTTeardown();
         }
 
         void OnDestroy()

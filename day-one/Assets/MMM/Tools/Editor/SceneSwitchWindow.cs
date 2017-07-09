@@ -2,6 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEditor.SceneManagement;
+using System.Collections.Generic;
 
 /// <summary>
 /// SceneSwitchWindow class.
@@ -44,15 +45,29 @@ public class SceneSwitchWindow : EditorWindow
                 var pressed = GUILayout.Button(i + ": " + sceneName, new GUIStyle(GUI.skin.GetStyle("Button")) { alignment = TextAnchor.MiddleLeft });
                 if (pressed)
                 {
-                    if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-                    {
-                        EditorSceneManager.OpenScene(scene.path);
-                    }
+                    SafeLoad(sceneName, scene.path);
                 }
             }
         }
 
         EditorGUILayout.EndScrollView();
         EditorGUILayout.EndVertical();
+    }
+
+    public static void SafeLoad(string name, string path)
+    {
+        if (Application.isPlaying)
+        {
+            // Load Scene By name
+            UnityEngine.SceneManagement.SceneManager.LoadScene(name);
+        }
+        else
+        {
+            // Offer to save first
+            EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+
+            // Load Scene by path
+            EditorSceneManager.OpenScene(path);
+        }
     }
 }
