@@ -5,6 +5,7 @@ using DG.Tweening;
 public class MidiMoveTweenTiming : MidiBehaviour
 {
     public float amplitude = 1;
+    Vector3 ogPosition;
 
     /// <summary>
     /// Set default activeEvents
@@ -14,10 +15,15 @@ public class MidiMoveTweenTiming : MidiBehaviour
         activeEvents = MidiEvents.NoteOn | MidiEvents.NoteOff;
     }
 
+    private void Start()
+    {
+        ogPosition = transform.position;
+    }
+
     // Move towards user when a midi note is pressed
     public override void HandleNoteOn(int channel, int note, float velocity)
     {
-        Vector3 newPosition = Vector3.back * velocity * amplitude;
+        Vector3 newPosition = ogPosition + (Vector3.back * velocity * amplitude);
         transform.DOKill();
         transform.DOMove(newPosition, timing.attack);
     }
@@ -26,7 +32,7 @@ public class MidiMoveTweenTiming : MidiBehaviour
     public override void HandleNoteOff(int channel, int note)
     {
         transform.DOKill();
-        transform.DOMove(Vector3.zero, timing.release);
+        transform.DOMove(ogPosition, timing.release);
     }
 
 }

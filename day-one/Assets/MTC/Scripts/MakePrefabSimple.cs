@@ -15,14 +15,6 @@ public class MakePrefabSimple : MidiBehaviour {
         activeEvents = MidiEvents.NoteOn;
     }
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
-
     public override void HandleNoteOn(int channel, int note, float velocity)
     {
         Vector3 position = Vector3.Lerp(startPoint, endPoint, GetNormalizedNote(note));
