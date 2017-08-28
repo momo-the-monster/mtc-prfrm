@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using MMM.RTMidi;
+using MMM.Midi;
 
 public class MidiMove : MidiBehaviour
 {

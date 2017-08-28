@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MMM.RTMidi;
+using MMM.Midi;
 
 public class MakePrefabSimple : MidiBehaviour {
 

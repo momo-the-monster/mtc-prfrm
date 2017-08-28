@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MMM.RTMidi;
+using MMM.Midi;
 using DG.Tweening;
 
 public class MakePrefabLifeControl : MidiBehaviour
