@@ -55,12 +55,15 @@ public class SetDropdownFromPorts : MonoBehaviour {
 
     List<string> GetDeviceNames()
     {
+        Debug.LogFormat("Get Device Names");
         var deviceNames = new List<string>();
         var endpointCount = MidiDriver.CountEndpoints();
+        Debug.LogFormat("Found {0} total", endpointCount);
         for (uint i = 0; i < endpointCount; i++)
         {
             string name = MidiDriver.GetEndpointName(i);
             deviceNames.Add(name);
+            Debug.LogFormat("Found {0}", name);
         }
         return deviceNames;
     }
@@ -68,6 +71,7 @@ public class SetDropdownFromPorts : MonoBehaviour {
     public void RefreshList()
     {
         dropdown.ClearOptions();
+        MidiDriver.RefreshDevices();
         allDevices = GetDeviceNames();
         dropdown.AddOptions(allDevices);
     }
