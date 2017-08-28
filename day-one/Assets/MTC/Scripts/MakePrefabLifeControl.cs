@@ -21,7 +21,6 @@ public class MakePrefabLifeControl : MidiBehaviour
 
     public override void HandleNoteOn(int channel, int note, float velocity)
     {
-        base.HandleNoteOn(channel, note, velocity);
         Vector3 position = Vector3.Lerp(startPoint, endPoint, GetNormalizedNote(note));
         Trigger(position, note);
     }

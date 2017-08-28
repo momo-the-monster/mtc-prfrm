@@ -116,7 +116,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 32487760}
-  - component: {fileID: 32487759}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
@@ -124,18 +123,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &32487759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 32487758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db58a3d8a6354460a04e7ba0842d1e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoOpenPort: 3
 --- !u!4 &32487760
 Transform:
   m_ObjectHideFlags: 0
@@ -352,6 +339,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 1
+  timing:
+    attack: 0
+    decay: 0
+    sustain: 0
+    release: 0
   amplitude: 1
 --- !u!54 &364161737
 Rigidbody:
@@ -435,6 +427,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 3
+  timing:
+    attack: 0
+    decay: 0
+    sustain: 0
+    release: 0
   amplitude: 1
   duration: 0.25
 --- !u!1 &844776577
@@ -675,6 +672,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 1
+  timing:
+    attack: 0
+    decay: 0
+    sustain: 0
+    release: 0
   amplitude: 1
 --- !u!54 &1520777660
 Rigidbody:
@@ -744,6 +746,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 3
+  timing:
+    attack: 0
+    decay: 0
+    sustain: 0
+    release: 0
   amplitude: 1
   duration: 0.25
 --- !u!1 &1676035572
@@ -792,6 +799,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 1
+  timing:
+    attack: 0
+    decay: 0
+    sustain: 0
+    release: 0
   amplitude: 1
 --- !u!54 &1676035575
 Rigidbody:
@@ -861,6 +873,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 3
+  timing:
+    attack: 0
+    decay: 0
+    sustain: 0
+    release: 0
   amplitude: 1
   duration: 0.25
 --- !u!1 &1981076994
