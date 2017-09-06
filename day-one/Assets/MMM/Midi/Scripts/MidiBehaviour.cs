@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using MidiJack;
 
@@ -29,6 +27,11 @@ namespace MMM.Midi
         [EnumFlag]
         public MidiEvents activeEvents;
 
+        public virtual void HandleNoteOn(int channel, int note, float velocity)
+        {
+            Debug.LogFormat("{0} On {1}", note, velocity);
+        }
+
         public virtual void HandleNoteOff(int channel, int note)
         {
             Debug.LogFormat("{0} Off", note);
@@ -39,14 +42,9 @@ namespace MMM.Midi
             Debug.LogFormat("Set control {0} to {1}", controlNumber, value);
         }
 
-        public virtual void HandleNoteOn(int channel, int note, float velocity)
+        private void NoteOn(MidiChannel channel, int note, float velocity)
         {
-            Debug.LogFormat("{0} On {1}", note, velocity);
-        }
-
-        private void ControlChange(MidiChannel channel, int knobNumber, float knobValue)
-        {
-            HandleControlChange((int)channel, knobNumber, knobValue);
+            HandleNoteOn((int)channel, note, velocity);
         }
 
         private void NoteOff(MidiChannel channel, int note)
@@ -54,27 +52,10 @@ namespace MMM.Midi
             HandleNoteOff((int)channel, note);
         }
 
-        private void NoteOn(MidiChannel channel, int note, float velocity)
+        private void ControlChange(MidiChannel channel, int knobNumber, float knobValue)
         {
-            HandleNoteOn((int)channel, note, velocity);
+            HandleControlChange((int)channel, knobNumber, knobValue);
         }
-
-        /*
-        private void NoteOff(int channel, int note)
-        {
-            UnityMainThreadDispatcher.Enqueue(() => HandleNoteOff(channel, note));
-        }
-
-        private void ControlChange(int channel, int controlNumber, float value)
-        {
-            UnityMainThreadDispatcher.Enqueue(() => HandleControlChange(channel, controlNumber, value));
-        }
-
-       private void NoteOn(int channel, int note, float velocity)
-        {
-            UnityMainThreadDispatcher.Enqueue(() => HandleNoteOn(channel, note, velocity));
-        }
-        */
         #endregion
 
         #region Animation

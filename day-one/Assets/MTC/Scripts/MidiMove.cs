@@ -5,6 +5,11 @@ public class MidiMove : MidiBehaviour
 {
     public float amplitude = 1;
 
+    MidiMove()
+    {
+        activeEvents = MidiEvents.NoteOn | MidiEvents.NoteOff;
+    }
+
     /// <summary>
     /// Move towards user when a midi note is pressed
     /// </summary>
