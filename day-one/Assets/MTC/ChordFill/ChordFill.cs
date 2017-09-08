@@ -21,6 +21,8 @@ public class ChordFill : MidiBehaviour {
     {
         if (!activeNotes.ContainsKey(note))
         {
+
+            timing.attack = 1 - velocity;
             // Spawn object
             GameObject g = Instantiate(prefab, Vector3.zero, Quaternion.identity);
             g.transform.SetParent(container);

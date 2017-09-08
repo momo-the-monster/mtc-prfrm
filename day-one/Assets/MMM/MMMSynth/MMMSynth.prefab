@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voices: 4
   volume: 0.365
-  stereo: 0.5
+  stereo: 0
   fm_mul: 8
   fm_mod: 0.08
 --- !u!114 &114887757142238842
@@ -73,5 +73,5 @@ MonoBehaviour:
     attack: 0
     decay: 0
     sustain: 0
-    release: 0
+    release: 0.01
   scale: 24

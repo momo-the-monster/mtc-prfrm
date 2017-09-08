@@ -20,9 +20,9 @@ public class MidiTriggerSynth : MidiBehaviour {
     {
         if (!envelopeLookup.ContainsKey(note))
         {
-            envelopeLookup.Add(note, synth.KeyOn(note));
-            //envelopeLookup[note].attack = timing.attack;
-            envelopeLookup[note].release = timing.release;
+            timing.attack = 1 - velocity;
+            Lope envelope = synth.KeyOn(note, timing.attack);
+            envelopeLookup.Add(note, envelope);
         }
     }
 
@@ -31,7 +31,7 @@ public class MidiTriggerSynth : MidiBehaviour {
         Lope envelope;
         if (envelopeLookup.TryGetValue(note, out envelope))
         {
-            envelope.KeyOff();
+            envelope.KeyOff(timing.release);
             envelopeLookup.Remove(note);
         }
     }

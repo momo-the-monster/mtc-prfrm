@@ -290,6 +290,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114887757142238842, guid: 5b73bbd042b911b4480fa7fe078f872f,
+        type: 2}
+      propertyPath: timing.attack
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114411130479937576, guid: 5b73bbd042b911b4480fa7fe078f872f,
+        type: 2}
+      propertyPath: voices
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114411130479937576, guid: 5b73bbd042b911b4480fa7fe078f872f,
+        type: 2}
+      propertyPath: rate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114411130479937576, guid: 5b73bbd042b911b4480fa7fe078f872f,
+        type: 2}
+      propertyPath: mult_max
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114887757142238842, guid: 5b73bbd042b911b4480fa7fe078f872f,
+        type: 2}
+      propertyPath: timing.release
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b73bbd042b911b4480fa7fe078f872f, type: 2}
   m_IsPrefabParent: 0

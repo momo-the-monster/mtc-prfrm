@@ -26,6 +26,12 @@ public class Lope {
         delta = 1.0f / (attack * sampleRate );
     }
 
+    public void KeyOff(float _release)
+    {
+        release = _release;
+        KeyOff();
+    }
+
     public void KeyOff() {
         delta = -1.0f / (release * sampleRate );
     }
