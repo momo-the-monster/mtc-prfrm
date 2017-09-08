@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6a16b8fbf2730aa4089342d8f3df936e
-timeCreated: 1495396271
+timeCreated: 1503904834
 licenseType: Free
 PluginImporter:
   serializedVersion: 2
@@ -11,20 +11,37 @@ PluginImporter:
   platformData:
     data:
       first:
-        '': WP8
+        '': Any
+      second:
+        enabled: 0
+        settings:
+          Exclude Android: 1
+          Exclude Editor: 0
+          Exclude Linux: 0
+          Exclude Linux64: 0
+          Exclude LinuxUniversal: 0
+          Exclude OSXIntel: 0
+          Exclude OSXIntel64: 0
+          Exclude OSXUniversal: 0
+          Exclude WebGL: 1
+          Exclude Win: 1
+          Exclude Win64: 0
+          Exclude iOS: 1
+    data:
+      first:
+        '': Editor
       second:
         enabled: 0
         settings:
           CPU: AnyCPU
-          DontProcess: False
-          PlaceholderPath: 
+          OS: AnyOS
     data:
       first:
         Android: Android
       second:
         enabled: 0
         settings:
-          CPU: AnyCPU
+          CPU: ARMv7
     data:
       first:
         Any: 
@@ -39,7 +56,6 @@ PluginImporter:
         settings:
           CPU: x86_64
           DefaultValueInitialized: true
-          OS: Windows
     data:
       first:
         Facebook: Win
@@ -56,18 +72,11 @@ PluginImporter:
           CPU: AnyCPU
     data:
       first:
-        Samsung TV: SamsungTV
-      second:
-        enabled: 0
-        settings:
-          STV_MODEL: STANDARD_13
-    data:
-      first:
         Standalone: Linux
       second:
         enabled: 1
         settings:
-          CPU: x86
+          CPU: None
     data:
       first:
         Standalone: Linux64
@@ -88,7 +97,7 @@ PluginImporter:
       second:
         enabled: 1
         settings:
-          CPU: AnyCPU
+          CPU: None
     data:
       first:
         Standalone: OSXIntel64
@@ -117,16 +126,6 @@ PluginImporter:
         enabled: 1
         settings:
           CPU: AnyCPU
-    data:
-      first:
-        Windows Store Apps: WindowsStoreApps
-      second:
-        enabled: 0
-        settings:
-          CPU: AnyCPU
-          DontProcess: False
-          PlaceholderPath: 
-          SDK: AnySDK
     data:
       first:
         iPhone: iOS
