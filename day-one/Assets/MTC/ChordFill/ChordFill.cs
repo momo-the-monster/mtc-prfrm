@@ -32,7 +32,7 @@ public class ChordFill : MidiBehaviour {
             Image image = g.GetComponent<Image>();
             if (image != null)
             {
-                image.color = UnityEngine.Random.ColorHSV(normalizedNote- 0.02f, normalizedNote, 0.9f, 0.9f, velocity, velocity);
+                image.color = UnityEngine.Random.ColorHSV(normalizedNote- 0.02f, normalizedNote, 0.9f, 0.9f, velocity, velocity + 1);
             }
             LayoutElement layout = g.GetComponent<LayoutElement>();
             if (layout != null)

@@ -20,7 +20,7 @@ public class MidiTriggerSynth : MidiBehaviour {
     {
         if (!envelopeLookup.ContainsKey(note))
         {
-            timing.attack = 1 - velocity;
+            timing.attack = (velocity < 0.5f) ? Mathf.Lerp(0.5f, 0f, velocity) : 0f;
             Lope envelope = synth.KeyOn(note, timing.attack);
             envelopeLookup.Add(note, envelope);
         }
