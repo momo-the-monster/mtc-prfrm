@@ -66,8 +66,6 @@ public class ChordFill : MidiBehaviour {
             {
                 DOTween.Sequence()
                 .AppendInterval(timing.sustain)
-//                .Append(layout.DOPreferredSize(new Vector2(10, layout.preferredHeight), timing.release))
-//                .AppendInterval(timing.release * 2)
                 .Append(layout.DOPreferredSize(new Vector2(0, layout.preferredHeight), timing.release))
                 .AppendCallback(() => Destroy(g));
             }

@@ -81,7 +81,7 @@ public class LoadBGsToQuantizer : MonoBehaviour {
         bytes = File.ReadAllBytes(imagePath);
 #endif
         bool success = loadedTexture.LoadImage(bytes);
-        loadedTexture.wrapMode = TextureWrapMode.Repeat;
+        loadedTexture.wrapMode = TextureWrapMode.Mirror;
 
         // Update BG scaler if it exists
         if (success && bgScaler != null)
