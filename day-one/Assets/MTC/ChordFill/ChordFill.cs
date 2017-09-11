@@ -9,7 +9,9 @@ public class ChordFill : MidiBehaviour {
 
     public GameObject prefab;
     public Transform container;
-
+    public float alpha = 1f;
+    public float widthMult = 1f;
+    public float heightMult = 1f;
     Dictionary<int, GameObject> activeNotes = new Dictionary<int, GameObject>();
 
     ChordFill()
@@ -25,20 +27,23 @@ public class ChordFill : MidiBehaviour {
             timing.attack = 1 - velocity;
             // Spawn object
             GameObject g = Instantiate(prefab, Vector3.zero, Quaternion.identity);
-            g.transform.SetParent(container);
+            g.transform.SetParent(container,false);
 
             float normalizedNote = GetNormalizedNote(note);
 
             Image image = g.GetComponent<Image>();
             if (image != null)
             {
-                image.color = UnityEngine.Random.ColorHSV(normalizedNote- 0.02f, normalizedNote, 0.9f, 0.9f, velocity, velocity + 1);
+                Color color = MMM.MMMColors.Instance.GetColorAt(note);
+                //Color color = MMM.MMMColors.Instance.GetRandomColor();
+                color.a = alpha;
+                image.color = color;
             }
             LayoutElement layout = g.GetComponent<LayoutElement>();
             if (layout != null)
             {
                 layout.preferredWidth = 0;
-                layout.DOPreferredSize(new Vector2(Screen.width, Screen.height), timing.attack);
+                layout.DOPreferredSize(new Vector2(Screen.width * widthMult, Screen.height * heightMult), (timing.attack > 0.1f) ? timing.attack : 0);
             }
 
             // Add to lookup
@@ -61,7 +66,9 @@ public class ChordFill : MidiBehaviour {
             {
                 DOTween.Sequence()
                 .AppendInterval(timing.sustain)
-                .Append(layout.DOPreferredSize(new Vector2(0, Screen.height), timing.release))
+//                .Append(layout.DOPreferredSize(new Vector2(10, layout.preferredHeight), timing.release))
+//                .AppendInterval(timing.release * 2)
+                .Append(layout.DOPreferredSize(new Vector2(0, layout.preferredHeight), timing.release))
                 .AppendCallback(() => Destroy(g));
             }
         }
