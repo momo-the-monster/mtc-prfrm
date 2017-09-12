@@ -22,6 +22,7 @@ namespace MMM
         public bool orthoMode = true;
 
         private float scaleMult;
+        public float orthoScaleMult = 1;
 
         // Set scaleMult to the larger value between width or height on Enable
         private void OnEnable()
@@ -32,7 +33,7 @@ namespace MMM
         void Update()
         {
             // Exit early if not needed
-            if (!doUpdate)
+            if (!doUpdate && !orthoMode)
                 return;
             else
                 doUpdate = false;
@@ -69,21 +70,21 @@ namespace MMM
         void OrthoUpdate()
         {
             Camera cam = Camera.main;
+            float finalMult = orthoScaleMult * cam.orthographicSize;
             // Use the Viewport bounds as the target scale by converting it to World Space
             Vector3 worldMin = cam.ViewportToWorldPoint(new Vector3(0, 0, 0));
             Vector3 worldMax = cam.ViewportToWorldPoint(new Vector3(1, 1, 0));
             float width = worldMax.x - worldMin.x;
             float height = worldMax.y - worldMin.y;
-            Vector3 scale = new Vector3(width, height, 0f);
-
+            Vector3 scale = new Vector3(finalMult, finalMult, finalMult);
             // Find smaller dimension and scale it down proportionally to larger one
             if (width >= height)
-                scale.y = width / aspectRatio;
+                scale.x = finalMult / aspectRatio;
             else
-                scale.x = height * aspectRatio;
+                scale.y = finalMult / aspectRatio;
 
             // Apply new scale
-            transform.localScale = scale;
+            transform.DOScale(scale, 2f).SetEase(Ease.OutExpo);
         }
     }
 }

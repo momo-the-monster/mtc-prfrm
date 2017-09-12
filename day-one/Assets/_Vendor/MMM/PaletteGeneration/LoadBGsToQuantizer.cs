@@ -1,22 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.IO;
 using System.Linq;
 
+[RequireComponent(typeof(Quantizer))]
 public class LoadBGsToQuantizer : MonoBehaviour {
 
     public Renderer bgRenderer;
+    public RawImage bgImage;
     public Texture2D loadedTexture;
     public bool trigger = false;
-    public Quantizer quantizer;
+    Quantizer quantizer;
     internal List<string> imagePaths;
     internal int currentImage = 0;
     public MMM.FillScreen bgScaler;
+    public MMM.FillScreenRawImage bgScalerRaw;
     public KeyCode triggerKey = KeyCode.None;
 
     void Start () {
+        quantizer = GetComponent<Quantizer>();
         imagePaths = GetImageList();
         TriggerRandom();
     }
@@ -55,6 +60,10 @@ public class LoadBGsToQuantizer : MonoBehaviour {
         {
             bgRenderer.sharedMaterial.mainTexture = loadedTexture;
         }
+        if(bgImage != null)
+        {
+            bgImage.texture = loadedTexture;
+        }
     }
 
     IEnumerator SetTexture()
@@ -87,11 +96,18 @@ public class LoadBGsToQuantizer : MonoBehaviour {
         if (success && bgScaler != null)
             bgScaler.AspectRatio = (float)loadedTexture.width / (float)loadedTexture.height;
 
+        if (success && bgScalerRaw != null)
+            bgScalerRaw.AspectRatio = (float)loadedTexture.width / (float)loadedTexture.height;
+
         quantizer.inputTexture = loadedTexture;
         quantizer.trigger = true;
         if(bgRenderer != null)
         {
             bgRenderer.sharedMaterial.mainTexture = loadedTexture;
+        }
+        if (bgImage != null)
+        {
+            bgImage.texture = loadedTexture;
         }
         yield return new WaitForEndOfFrame();
     }
