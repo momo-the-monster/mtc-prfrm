@@ -31,12 +31,27 @@ public class MidiHistory {
         UpdateMinMax();
     }
 
+    public Vector2 GetRange()
+    {
+        return minMaxHistory;
+    }
+
     void UpdateMinMax()
     {
         // Update sorting afterwards
         var sorted = noteHistory.OrderBy(item => item).ToList<int>();
         minMaxHistory.x = sorted[0];
         minMaxHistory.y = sorted[sorted.Count - 1];
+    }
+
+    public override string ToString()
+    {
+        string result = "";
+        for (int i = 0; i < noteHistory.Count; i++)
+        {
+            result += noteHistory[i].ToString() + " ";
+        }
+        return result;
     }
 
 }
