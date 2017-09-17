@@ -24,14 +24,12 @@ public class MidiMoveTweenTiming : MidiBehaviour
     public override void HandleNoteOn(int channel, int note, float velocity)
     {
         Vector3 newPosition = ogPosition + (Vector3.back * velocity * amplitude);
-        transform.DOKill();
         transform.DOMove(newPosition, timing.attack);
     }
 
     // Move to world center when midi note is released
     public override void HandleNoteOff(int channel, int note)
     {
-        transform.DOKill();
         transform.DOMove(ogPosition, timing.release);
     }
 
