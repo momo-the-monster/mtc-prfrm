@@ -32,3 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/IsoMidi/Scenes/IsoMidi.unity
     guid: 92bb8b687c6b6e249910483e9faf72ab
+  - enabled: 1
+    path: Assets/_Project/Scenes/MidiHistory.unity
+    guid: 338f5c0bb9095b04abd6612e22b50204
