@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 
-namespace mmm
+namespace MMM
 {
     [System.Serializable]
     public struct Offset
@@ -22,7 +22,7 @@ public class IsometricCameraControl : MonoBehaviour {
     public Camera camera;
     [SerializeField]
     public int currentOffsetIndex = 0;
-    public List<mmm.Offset> offsets;
+    public List<MMM.Offset> offsets;
     public bool userMoved = false;
     public Transform target;
     public bool doFollow = false;
@@ -56,7 +56,7 @@ public class IsometricCameraControl : MonoBehaviour {
             currentOffsetIndex = (offsets.Count - 1);
     }
 
-    public mmm.Offset GetOffset()
+    public MMM.Offset GetOffset()
     {
         return offsets[currentOffsetIndex];
     }
