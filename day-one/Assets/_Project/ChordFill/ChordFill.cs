@@ -24,7 +24,7 @@ public class ChordFill : MidiBehaviour {
         if (!activeNotes.ContainsKey(note))
         {
 
-            timing.attack = 1 - velocity;
+            envelope.attack = 1 - velocity;
             // Spawn object
             GameObject g = Instantiate(prefab, Vector3.zero, Quaternion.identity);
             g.transform.SetParent(container,false);
@@ -35,15 +35,17 @@ public class ChordFill : MidiBehaviour {
             if (image != null)
             {
                 Color color = MMM.MMMColors.Instance.GetColorAt(note);
-                //Color color = MMM.MMMColors.Instance.GetRandomColor();
                 color.a = alpha;
                 image.color = color;
             }
+
             LayoutElement layout = g.GetComponent<LayoutElement>();
             if (layout != null)
             {
-                layout.preferredWidth = 0;
-                layout.DOPreferredSize(new Vector2(Screen.width * widthMult, Screen.height * heightMult), (timing.attack > 0.1f) ? timing.attack : 0);
+                DOTween.Sequence()
+                    .AppendCallback(() => layout.preferredWidth = 0)
+                    .Append(layout.DOPreferredSize(new Vector2(Screen.width * widthMult, Screen.height * heightMult), (envelope.attack > 0.1f) ? envelope.attack : 0.1f))
+                    .Append(layout.transform.DOScaleY(layout.transform.localScale.y * envelope.sustain, envelope.decay));
             }
 
             // Add to lookup
@@ -64,9 +66,10 @@ public class ChordFill : MidiBehaviour {
             LayoutElement layout = g.GetComponent<LayoutElement>();
             if (image != null && layout != null)
             {
+                layout.transform.DOKill();
+                layout.DOKill();
                 DOTween.Sequence()
-                .AppendInterval(timing.sustain)
-                .Append(layout.DOPreferredSize(new Vector2(0, layout.preferredHeight), timing.release))
+                .Append(layout.DOPreferredSize(new Vector2(0, 0), envelope.release))
                 .AppendCallback(() => Destroy(g));
             }
         }

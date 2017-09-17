@@ -32,7 +32,7 @@ public class SynthTriggerKeyboard : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            envelope = synth.KeyOn(8);
+            envelope = synth.KeyOn(8).module.env;
         }
         if(Input.GetKeyUp(KeyCode.Space))
         {

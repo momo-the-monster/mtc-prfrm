@@ -75,7 +75,7 @@ namespace MMM.Midi
         }
 
         [SerializeField]
-        public ADSR timing;
+        public ADSR envelope;
 
         #endregion
 

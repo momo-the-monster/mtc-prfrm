@@ -284,12 +284,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 3
-  timing:
-    attack: 0
-    decay: 0
-    sustain: 0
-    release: 4
-  scale: 24
+  envelope:
+    attack: 0.5
+    decay: 0.5
+    sustain: -0.1
+    release: 1
 --- !u!114 &943954642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,16 +301,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 3
-  timing:
-    attack: 0
-    decay: 0
-    sustain: 0
-    release: 4
+  envelope:
+    attack: 0.5
+    decay: 1
+    sustain: 0.5
+    release: 1
   prefab: {fileID: 1840158484047172, guid: bce9b07da878c2b4aafe7fe415002edc, type: 2}
   container: {fileID: 1180616884}
   alpha: 0.95
   widthMult: 1
-  heightMult: 0.1
+  heightMult: 1
 --- !u!114 &943954643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   voices: 16
-  volume: 0.218
+  volume: 0.1
   stereo: 0
   fm_mul: 8
   fm_mod: 0.08
@@ -598,7 +597,7 @@ MonoBehaviour:
     m_Right: 12
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 7
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0

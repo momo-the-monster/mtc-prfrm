@@ -24,7 +24,7 @@ public class MidiSpin : MidiBehaviour {
         Vector3 direction = Vector3.forward;
         var directions = new Vector3[]{ Vector3.forward, Vector3.up, Vector3.right, Vector3.back};
         Quaternion newRotation = Quaternion.AngleAxis((value - 0.5f) * 180 * amplitude, directions[directionIndex]);
-        transform.DORotate(newRotation.eulerAngles, timing.release, RotateMode.Fast);
+        transform.DORotate(newRotation.eulerAngles, envelope.release, RotateMode.Fast);
     }
 
 }

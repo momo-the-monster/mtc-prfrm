@@ -38,6 +38,6 @@ public class MidiToPosition : MidiBehaviour {
 
     void MoveTo(Vector3 position)
     {
-        transform.DOMove(position, timing.attack);
+        transform.DOMove(position, envelope.attack);
     }
 }

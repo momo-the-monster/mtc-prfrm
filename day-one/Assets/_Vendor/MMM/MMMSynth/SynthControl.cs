@@ -71,11 +71,12 @@ public class SynthControl : MonoBehaviour {
         }
     }
 
-    public Lope KeyOn(int note, float attack = 0) {
+    public SynthMono KeyOn(int note, float attack = 0) {
         // increment switcher
         switcher = (switcher + 1) % voices;
 
         var module = modules[switcher];
-        return module.KeyOn(note, attack);
+        module.KeyOn(note, attack);
+        return module;
     }
 }

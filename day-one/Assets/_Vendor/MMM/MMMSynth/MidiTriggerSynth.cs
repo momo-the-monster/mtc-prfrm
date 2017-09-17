@@ -2,27 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MMM.Midi;
+using DG.Tweening;
 
 public class MidiTriggerSynth : MidiBehaviour {
 
-    [Range(24, 48)]
-    public int scale = 24;
     private SynthControl synth;
     private Dictionary<int, Lope> envelopeLookup;
+    private float ogMult;
 
     public void Start()
     {
         synth = GetComponent<SynthControl>();
         envelopeLookup = new Dictionary<int, Lope>();
+        ogMult = synth.fm_mul;
     }
 
     public override void HandleNoteOn(int channel, int note, float velocity)
     {
         if (!envelopeLookup.ContainsKey(note))
         {
-            timing.attack = (velocity < 0.5f) ? Mathf.Lerp(0.5f, 0f, velocity) : 0f;
-            Lope envelope = synth.KeyOn(note, timing.attack);
-            envelopeLookup.Add(note, envelope);
+            envelope.attack = (velocity < 0.5f) ? Mathf.Lerp(0.5f, 0f, velocity) : 0f;
+            var synthMono = synth.KeyOn(note, envelope.attack);
+            envelopeLookup.Add(note, synthMono.module.env);
+
+            // Tween modulation using Generic Twen
+            DOVirtual.Float(ogMult + envelope.sustain, ogMult, envelope.decay, (floatValue) => 
+            {
+                synthMono.module.osc.multiplier = floatValue;
+            }).SetDelay(envelope.attack);
         }
     }
 
@@ -31,7 +38,7 @@ public class MidiTriggerSynth : MidiBehaviour {
         Lope envelope;
         if (envelopeLookup.TryGetValue(note, out envelope))
         {
-            envelope.KeyOff(timing.release);
+            envelope.KeyOff(base.envelope.release);
             envelopeLookup.Remove(note);
         }
     }
