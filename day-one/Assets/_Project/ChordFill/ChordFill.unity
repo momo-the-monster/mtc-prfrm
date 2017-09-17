@@ -328,7 +328,7 @@ MonoBehaviour:
   stereo: 0
   fm_mul: 8
   fm_mod: 0.08
-  rate: 2
+  rate: 0
   mult_min: 4
   mult_max: 6
 --- !u!1001 &978960554
