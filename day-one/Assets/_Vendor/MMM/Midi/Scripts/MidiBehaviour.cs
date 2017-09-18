@@ -59,25 +59,12 @@ namespace MMM.Midi
         #endregion
 
         #region Animation
-
-        [Serializable]
-        public struct ADSR
-        {
-            public float attack;
-            public float decay;
-            public float sustain;
-            public float release;
-
-            float a { get { return attack; } }
-            float d { get { return decay; } }
-            float s { get { return sustain; } }
-            float r { get { return release; } }
-        }
-
-        [SerializeField]
-        public ADSR envelope;
+        // We hide these in the inspector because we draw them in a special way in MidiBehaviourEditor
+        [HideInInspector]
         public float durationIn;
+        [HideInInspector]
         public float durationOut;
+        [HideInInspector]
         public float magnitude;
 
         #endregion
@@ -122,6 +109,14 @@ namespace MMM.Midi
             }
         }
 
+        #endregion
+
+        #region data handling
+        private void OnValidate()
+        {
+            durationIn = Mathf.Max(durationIn, 0);
+            durationOut = Mathf.Max(durationOut, durationIn);
+        }
         #endregion
 
     }

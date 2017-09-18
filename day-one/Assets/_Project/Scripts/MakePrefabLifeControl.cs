@@ -53,7 +53,7 @@ public class MakePrefabLifeControl : MidiBehaviour
 
     public void DestroyTimed(GameObject g)
     {
-        g.transform.DOScale(0, envelope.release).OnComplete(() => Destroy(g));
+        g.transform.DOScale(0, durationOut).OnComplete(() => Destroy(g));
     }
 
     // Draw start and endpoints into scene view

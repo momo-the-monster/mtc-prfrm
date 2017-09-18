@@ -19,7 +19,7 @@ public class MidiCCGeneric : MidiBehaviour {
     {
         if(controlNumber == ccNumber)
         {
-            ccEvent.Invoke(value * envelope.sustain);
+            ccEvent.Invoke(value * magnitude);
         }
     }
 }

@@ -311,15 +311,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 1
-  envelope:
-    attack: 0
-    decay: 0
-    sustain: 0
-    release: 0
   durationIn: 0
   durationOut: 0
-  magnitude: 0
-  amplitude: 1
+  magnitude: 4
 --- !u!54 &364161737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -401,15 +395,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 3
-  envelope:
-    attack: 0.1
-    decay: 0
-    sustain: 0
-    release: 1
   durationIn: 0.1
   durationOut: 1
-  magnitude: 0
-  amplitude: 1
+  magnitude: 4
 --- !u!1 &844776577
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,15 +636,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 1
-  envelope:
-    attack: 0
-    decay: 0
-    sustain: 0
-    release: 0
   durationIn: 0
-  durationOut: 0
-  magnitude: 0
-  amplitude: 1
+  durationOut: 4
+  magnitude: 4
 --- !u!54 &1520777660
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -725,15 +707,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 3
-  envelope:
-    attack: 0.1
-    decay: 0
-    sustain: 0
-    release: 1
   durationIn: 0.1
   durationOut: 1
-  magnitude: 0
-  amplitude: 1
+  magnitude: 1
 --- !u!1 &1676035572
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,15 +755,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 1
-  envelope:
-    attack: 0
-    decay: 0
-    sustain: 0
-    release: 0
   durationIn: 0
-  durationOut: 0
-  magnitude: 0
-  amplitude: 1
+  durationOut: 4
+  magnitude: 4
 --- !u!54 &1676035575
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -856,15 +826,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 3
-  envelope:
-    attack: 0.1
-    decay: 0
-    sustain: 0
-    release: 1
   durationIn: 0.1
   durationOut: 1
-  magnitude: 0
-  amplitude: 1
+  magnitude: 1
 --- !u!1 &1981076994
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class ChordFill : MidiBehaviour {
         if (!activeNotes.ContainsKey(note))
         {
 
-            envelope.attack = 1 - velocity;
+            durationIn = 1 - velocity;
             // Spawn object
             GameObject g = Instantiate(prefab, Vector3.zero, Quaternion.identity);
             g.transform.SetParent(container,false);
@@ -42,10 +42,8 @@ public class ChordFill : MidiBehaviour {
             LayoutElement layout = g.GetComponent<LayoutElement>();
             if (layout != null)
             {
-                DOTween.Sequence()
-                    .AppendCallback(() => layout.preferredWidth = 0)
-                    .Append(layout.DOPreferredSize(new Vector2(Screen.width * widthMult, Screen.height * heightMult), (envelope.attack > 0.1f) ? envelope.attack : 0.1f))
-                    .Append(layout.transform.DOScaleY(layout.transform.localScale.y * envelope.sustain, envelope.decay));
+                layout.preferredWidth = 0;
+                layout.DOPreferredSize(new Vector2(Screen.width * widthMult, Screen.height * heightMult), (durationIn > 0.1f) ? durationIn : 0.1f);
             }
 
             // Add to lookup
@@ -69,7 +67,7 @@ public class ChordFill : MidiBehaviour {
                 layout.transform.DOKill();
                 layout.DOKill();
                 DOTween.Sequence()
-                .Append(layout.DOPreferredSize(new Vector2(0, 0), envelope.release))
+                .Append(layout.DOPreferredSize(new Vector2(0, 0), durationOut))
                 .AppendCallback(() => Destroy(g));
             }
         }

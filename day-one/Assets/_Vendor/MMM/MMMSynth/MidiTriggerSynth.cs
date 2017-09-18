@@ -21,14 +21,8 @@ public class MidiTriggerSynth : MidiBehaviour {
     {
         if (!envelopeLookup.ContainsKey(note))
         {
-            var synthMono = synth.KeyOn(note, envelope.attack);
+            var synthMono = synth.KeyOn(note, durationIn);
             envelopeLookup.Add(note, synthMono.module.env);
-
-            // Tween modulation using Generic Twen
-            DOVirtual.Float(ogMult + envelope.sustain, ogMult, envelope.decay, (floatValue) => 
-            {
-                synthMono.module.osc.multiplier = floatValue;
-            }).SetDelay(envelope.attack);
         }
     }
 
@@ -37,7 +31,7 @@ public class MidiTriggerSynth : MidiBehaviour {
         Lope envelope;
         if (envelopeLookup.TryGetValue(note, out envelope))
         {
-            envelope.KeyOff(base.envelope.release);
+            envelope.KeyOff(durationOut);
             envelopeLookup.Remove(note);
         }
     }
