@@ -37,8 +37,8 @@ public class MakePrefabLifeControl : MidiBehaviour
         {
             GameObject g = noteObjects[note];
             noteObjects.Remove(note);
-            DestroySimple(g);
-            //DestroyTimed(g);
+            //DestroySimple(g);
+            DestroyTimed(g);
         }
         else
         {

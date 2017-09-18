@@ -315,6 +315,9 @@ MonoBehaviour:
     decay: 0
     sustain: 0
     release: 1
+  durationIn: 0
+  durationOut: 1
+  magnitude: 0
   amplitude: 1
 --- !u!54 &364161737
 Rigidbody:
@@ -561,6 +564,9 @@ MonoBehaviour:
     decay: 0
     sustain: 0
     release: 0
+  durationIn: 0
+  durationOut: 0
+  magnitude: 0
   prefab: {fileID: 1114606207726238, guid: 2774310e460cf1f4bb236551fefeca9b, type: 2}
   startPoint: {x: -3.75, y: 2.5, z: 0}
   endPoint: {x: 3.75, y: 2.5, z: 0}
@@ -679,6 +685,9 @@ MonoBehaviour:
     decay: 0
     sustain: 0
     release: 1
+  durationIn: 0
+  durationOut: 1
+  magnitude: 1
   amplitude: 1
 --- !u!54 &1520777660
 Rigidbody:
@@ -885,6 +894,9 @@ MonoBehaviour:
     decay: 0
     sustain: 0
     release: 1
+  durationIn: 0
+  durationOut: 1
+  magnitude: 1
   amplitude: 1
 --- !u!54 &1676035575
 Rigidbody:

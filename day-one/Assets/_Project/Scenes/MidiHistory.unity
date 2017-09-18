@@ -196,11 +196,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 1
-  timing:
-    attack: 0.5
+  envelope:
+    attack: 0
     decay: 0
     sustain: 0
     release: 0
+  durationIn: 0.5
+  durationOut: 0
+  magnitude: 0
   easeType: 18
   xMinMax: {x: 0.05, y: 0.95}
   yMinMax: {x: 0, y: 1}
@@ -462,6 +465,101 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910130652}
+--- !u!1 &943954637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 943954638}
+  - component: {fileID: 943954642}
+  - component: {fileID: 943954641}
+  - component: {fileID: 943954643}
+  m_Layer: 0
+  m_Name: Logic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &943954638
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 943954637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &943954641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 943954637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e74e0ebe951744fab96b726515e67c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeEvents: 3
+  envelope:
+    attack: 0.5
+    decay: 0.5
+    sustain: -0.1
+    release: 1
+  durationIn: 0
+  durationOut: 0
+  magnitude: 0
+--- !u!114 &943954642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 943954637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc908a335b30754c90b5543e50e26ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeEvents: 3
+  envelope:
+    attack: 0.5
+    decay: 1
+    sustain: 0.5
+    release: 1
+  durationIn: 0
+  durationOut: 0
+  magnitude: 0
+  prefab: {fileID: 1840158484047172, guid: bce9b07da878c2b4aafe7fe415002edc, type: 2}
+  container: {fileID: 0}
+  alpha: 0.95
+  widthMult: 1
+  heightMult: 1
+--- !u!114 &943954643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 943954637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbfb79d15feb14629a071bc2ef42f8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voices: 16
+  volume: 0.1
+  stereo: 0
+  fm_mul: 8
+  fm_mod: 0.08
+  rate: 0
+  mult_min: 4
+  mult_max: 6
 --- !u!1 &1569275771
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +620,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1842554116
 GameObject:

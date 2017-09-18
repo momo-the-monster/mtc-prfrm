@@ -316,6 +316,9 @@ MonoBehaviour:
     decay: 0
     sustain: 0
     release: 0
+  durationIn: 0
+  durationOut: 0
+  magnitude: 0
   amplitude: 1
 --- !u!54 &364161737
 Rigidbody:
@@ -403,6 +406,9 @@ MonoBehaviour:
     decay: 0
     sustain: 0
     release: 1
+  durationIn: 0.1
+  durationOut: 1
+  magnitude: 0
   amplitude: 1
 --- !u!1 &844776577
 GameObject:
@@ -647,6 +653,9 @@ MonoBehaviour:
     decay: 0
     sustain: 0
     release: 0
+  durationIn: 0
+  durationOut: 0
+  magnitude: 0
   amplitude: 1
 --- !u!54 &1520777660
 Rigidbody:
@@ -721,6 +730,9 @@ MonoBehaviour:
     decay: 0
     sustain: 0
     release: 1
+  durationIn: 0.1
+  durationOut: 1
+  magnitude: 0
   amplitude: 1
 --- !u!1 &1676035572
 GameObject:
@@ -772,6 +784,9 @@ MonoBehaviour:
     decay: 0
     sustain: 0
     release: 0
+  durationIn: 0
+  durationOut: 0
+  magnitude: 0
   amplitude: 1
 --- !u!54 &1676035575
 Rigidbody:
@@ -846,6 +861,9 @@ MonoBehaviour:
     decay: 0
     sustain: 0
     release: 1
+  durationIn: 0.1
+  durationOut: 1
+  magnitude: 0
   amplitude: 1
 --- !u!1 &1981076994
 GameObject:

@@ -76,11 +76,13 @@ namespace MMM.Midi
 
         [SerializeField]
         public ADSR envelope;
+        public float durationIn;
+        public float durationOut;
+        public float magnitude;
 
         #endregion
 
         #region Enable / Disable
-
         public void OnEnable()
         {
             // Cache plugin instance
