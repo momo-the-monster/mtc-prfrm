@@ -6,20 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Project/Scenes/Cubes-1.unity
-    guid: 7aba9ce8955fd4c4b91e83dc8ae5fd4f
-  - enabled: 1
     path: Assets/_Project/Scenes/Cubes-2.unity
     guid: 8259d7dadb65fdd45bf1e2cebf9bc2bb
   - enabled: 1
-    path: Assets/_Project/Scenes/Cubes-3.unity
-    guid: 7e06fe99e9dbe264c902536ecc57f284
+    path: Assets/_Project/Scenes/Cubes-4.unity
+    guid: f5709852743a1474699004fa6514bb79
   - enabled: 1
     path: Assets/_Project/ChordFill/ChordFill.unity
     guid: 0a211f4d4398c5840996a7fb520e35b6
-  - enabled: 1
-    path: Assets/_Project/Scenes/Cubes-4.unity
-    guid: f5709852743a1474699004fa6514bb79
   - enabled: 1
     path: Assets/_Project/Scenes/Cubes-6.unity
     guid: 7b87c5adf3dbae247b6fa1f76ea45d78
