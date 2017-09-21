@@ -65,7 +65,7 @@ namespace MMM.Midi
         [HideInInspector]
         public float durationOut;
         [HideInInspector]
-        public float magnitude;
+        public float magnitude = 1;
 
         #endregion
 
