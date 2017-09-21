@@ -13,7 +13,7 @@ public class MidiCCGeneric : MidiBehaviour {
 
     public MidiFloatEvent ccEvent;
     [Range(1,127)]
-    public int ccNumber;
+    public int ccNumber = 0;
 
     public override void HandleControlChange(int channel, int controlNumber, float value)
     {
