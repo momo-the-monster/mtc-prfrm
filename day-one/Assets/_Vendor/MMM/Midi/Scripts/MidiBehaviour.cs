@@ -115,7 +115,7 @@ namespace MMM.Midi
         private void OnValidate()
         {
             durationIn = Mathf.Max(durationIn, 0);
-            durationOut = Mathf.Max(durationOut, durationIn);
+            durationOut = Mathf.Max(durationOut, 0);
         }
         #endregion
 
