@@ -21,24 +21,28 @@ public class MakePrefabLifeControl : MidiBehaviour
 
     public override void HandleNoteOn(int channel, int note, float velocity)
     {
-        Vector3 position = Vector3.Lerp(startPoint, endPoint, GetNormalizedNote(note));
-        Trigger(position, note);
+        Vector3 position = PositionFromFloat(GetNormalizedNote(note));
+        GameObject g = MakeAt(position);
+        noteObjects.Add(note, g);
+    }
+
+    Vector3 PositionFromFloat(float value)
+    {
+        return Vector3.Lerp(startPoint, endPoint, value);
     }
 
     // Trigger with dynamic float for easy Action Binding
     public void Trigger(float value)
     {
-        Vector3 position = Vector3.Lerp(startPoint, endPoint, value);
-        GameObject g = Instantiate(prefab, container, true);
-        g.transform.localPosition = position;
+        GameObject g = MakeAt(PositionFromFloat(value));
         DOVirtual.DelayedCall(durationOut, () => DestroyTimed(g));
     }
 
-    void Trigger(Vector3 position, int note)
+    GameObject MakeAt(Vector3 position)
     {
         GameObject g = Instantiate(prefab, position, Quaternion.identity, container);
         g.transform.localPosition = position;
-        noteObjects.Add(note, g);
+        return g;
     }
 
     public override void HandleNoteOff(int channel, int note)

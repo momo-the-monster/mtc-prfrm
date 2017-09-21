@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.112704046, g: 0.08844162, b: 0.1321924, a: 1}
+  m_IndirectSpecularColor: {r: 0.10689133, g: 0.08529798, b: 0.11837884, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -233,7 +233,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 844776577}
   m_LocalRotation: {x: 0.8778576, y: -0, z: -0, w: 0.47892174}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1284868014}
@@ -249,7 +249,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0, b: 0.35172415, a: 1}
-  m_Intensity: 0.45
+  m_Intensity: 0.74
   m_Range: 127.38
   m_SpotAngle: 152
   m_CookieSize: 10
@@ -298,7 +298,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 937610879}
   m_LocalRotation: {x: 0.75470185, y: 0.014307483, z: 0.016467588, w: -0.6557052}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1284868014}
@@ -314,7 +314,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0, g: 1, b: 0.99999976, a: 1}
-  m_Intensity: 0.4
+  m_Intensity: 0.74
   m_Range: 137.4
   m_SpotAngle: 145.64
   m_CookieSize: 10
@@ -385,7 +385,7 @@ MonoBehaviour:
   durationIn: 0
   durationOut: 1
   magnitude: 1
-  prefab: {fileID: 1114606207726238, guid: 5560573f9d158b1408f97cb21624f590, type: 2}
+  prefab: {fileID: 1114606207726238, guid: cc2c6cfc3f087f94aa78c4159fe6634d, type: 2}
   startPoint: {x: -8, y: 0, z: 0}
   endPoint: {x: 8, y: 0, z: 0}
   container: {fileID: 1034274288}
@@ -606,13 +606,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1981076994}
-  m_LocalRotation: {x: 0.9977981, y: 0.0005737769, z: 0.008707581, w: -0.065748855}
+  m_LocalRotation: {x: 0.8919989, y: 0.03241406, z: 0.44619313, w: -0.06479998}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.99999976, z: 1.0000002}
   m_Children: []
   m_Father: {fileID: 1284868014}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 187.54, y: -1, z: 0}
+  m_LocalEulerAnglesHint: {x: 188.31, y: -53.15, z: 0}
 --- !u!108 &1981076996
 Light:
   m_ObjectHideFlags: 0
@@ -622,8 +622,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.35294116, g: 1, b: 0.9999998, a: 1}
-  m_Intensity: 2.24
+  m_Color: {r: 1, g: 0.5147059, b: 0.5147059, a: 1}
+  m_Intensity: 3.1
   m_Range: 5.53
   m_SpotAngle: 146
   m_CookieSize: 10
