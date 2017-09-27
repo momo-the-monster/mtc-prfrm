@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using MMM.Midi;
 using DG.Tweening;
+using System;
 
-public class MidiTriggerSynth : MidiBehaviour {
+public class MidiTriggerSynth : MidiBehaviour, ICCHandler {
 
     private SynthControl synth;
     private Dictionary<int, Lope> envelopeLookup;
@@ -34,5 +35,16 @@ public class MidiTriggerSynth : MidiBehaviour {
             envelope.KeyOff(durationOut);
             envelopeLookup.Remove(note);
         }
+    }
+
+    public void ApplyCC(float value)
+    {
+        int[] scale = { 0, 2, 4, 7, 9};
+        var noteIndex = Mathf.FloorToInt(value * (scale.Length - 1));
+        var note = magnitude * scale.Length + scale[noteIndex];
+        var synthMono = synth.KeyOn((int)note, durationIn);
+        DOVirtual.DelayedCall(durationOut, () =>
+            synthMono.module.env.KeyOff(durationOut)
+        );
     }
 }

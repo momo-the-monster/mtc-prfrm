@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using MMM.Midi;
+using System;
 
 public class MidiCCGeneric : MidiBehaviour {
 
@@ -26,3 +27,8 @@ public class MidiCCGeneric : MidiBehaviour {
 
 [System.Serializable]
 public class MidiFloatEvent : UnityEvent<float> { }
+
+public interface ICCHandler
+{
+    void ApplyCC(float value);
+}

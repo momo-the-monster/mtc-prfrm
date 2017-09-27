@@ -284,11 +284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 3
-  envelope:
-    attack: 0.5
-    decay: 0.5
-    sustain: -0.1
-    release: 1
   durationIn: 0.5
   durationOut: 1
   magnitude: 0
@@ -304,11 +299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEvents: 3
-  envelope:
-    attack: 0.5
-    decay: 1
-    sustain: 0.5
-    release: 1
   durationIn: 0.5
   durationOut: 1
   magnitude: 0
