@@ -1,0 +1,26 @@
+2017.1.1f1:2.8.0.0
+StandaloneWindows64
+E:/Applications/Unity2017.1/Editor/Data/Managed/UnityEditor.dll
+E:/Applications/Unity2017.1/Editor/Data/Managed/UnityEngine.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/UnityPurchasing/Editor/UnityEditor.Purchasing.dll
+E:/Applications/Unity2017.1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll
+E:/Applications/Unity2017.1/Editor/Data/Managed/UnityEditor.Graphs.dll
+E:/Applications/Unity2017.1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+E:/Applications/Unity2017.1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+E:/Applications/Unity2017.1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
+C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll

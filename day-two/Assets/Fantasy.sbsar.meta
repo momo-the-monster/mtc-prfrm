@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: da844f7bf4c8db947afdbf588fdb9be7
+timeCreated: 1506485929
+licenseType: Free
+SubstanceImporter:
+  serializedVersion: 5
+  materialInstances:
+  - serializedVersion: 16
+    name: Fantasy_Contest
+    prototypeName: Fantasy_Contest
+    shaderName: 
+    shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+    renderQueue: -1
+    lightmapFlags: 4
+    inputs:
+    - name: $outputsize
+      value:
+        scalar[0]: 8
+        scalar[1]: 8
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: $randomseed
+      value:
+        scalar[0]: 1697
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: RandomMask
+      value:
+        scalar[0]: 0.73
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: RandomMask2
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: RandomMask3
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: StoneScale
+      value:
+        scalar[0]: 1.01
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: outputcolor
+      value:
+        scalar[0]: 0.108949
+        scalar[1]: 0.273014
+        scalar[2]: 0.301961
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: outputcolor2
+      value:
+        scalar[0]: 0
+        scalar[1]: 0.339483
+        scalar[2]: 0.415686
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: outputcolor3
+      value:
+        scalar[0]: 0
+        scalar[1]: 0.212818
+        scalar[2]: 0.290196
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: outputcolor4
+      value:
+        scalar[0]: 0
+        scalar[1]: 0.175692
+        scalar[2]: 0.329412
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: GlowColour
+      value:
+        scalar[0]: 0.5
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    materialInformation:
+      serializedVersion: 5
+      offset: {x: 0, y: 0}
+      scale: {x: 60, y: 60}
+      generateMipmaps: 1
+      generateAllOutputs: 1
+      animationUpdateRate: 42
+    materialProperties:
+      serializedVersion: 3
+      texEnvs:
+      - _BumpMap:
+          texture: {instanceID: 0}
+          scale: {x: 60, y: 6}
+          offset: {x: 0, y: 0}
+      - _DetailAlbedoMap:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _DetailMask:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _DetailNormalMap:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _EmissionMap:
+          texture: {instanceID: 0}
+          scale: {x: 60, y: 60}
+          offset: {x: 0, y: 0}
+      - _MainTex:
+          texture: {instanceID: 0}
+          scale: {x: 60, y: 60}
+          offset: {x: 0, y: 0}
+      - _MetallicGlossMap:
+          texture: {instanceID: 0}
+          scale: {x: 60, y: 6}
+          offset: {x: 0, y: 0}
+      - _OcclusionMap:
+          texture: {instanceID: 0}
+          scale: {x: 1, y: 1}
+          offset: {x: 0, y: 0}
+      - _ParallaxMap:
+          texture: {instanceID: 0}
+          scale: {x: 60, y: 6}
+          offset: {x: 0, y: 0}
+      floats:
+      - _BumpScale: 0.24
+      - _Cutoff: 0.5
+      - _DetailNormalMapScale: 1
+      - _DstBlend: 0
+      - _GlossMapScale: 0.632
+      - _Glossiness: 0.5
+      - _GlossyReflections: 1
+      - _Metallic: 0
+      - _Mode: 0
+      - _OcclusionStrength: 1
+      - _Parallax: 0.02
+      - _SmoothnessTextureChannel: 0
+      - _SpecularHighlights: 1
+      - _SrcBlend: 1
+      - _UVSec: 0
+      - _ZWrite: 1
+      colors:
+      - _Color: {r: 1, g: 1, b: 1, a: 1}
+      - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    textureParameters:
+    - name: Fantasy_Contest_basecolor
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Fantasy_Contest_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Fantasy_Contest_metallic
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Fantasy_Contest_Height
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Fantasy_Contest_Emissive
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Fantasy_Contest_roughness
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    textureAssignments:
+    - shaderProp: _MainTex
+      material: {instanceID: 0}
+      baseUID: 672674310
+    - shaderProp: _BumpMap
+      material: {instanceID: 0}
+      baseUID: 672674308
+    - shaderProp: _EmissionMap
+      material: {instanceID: 0}
+      baseUID: 699091310
+    - shaderProp: _MetallicGlossMap
+      material: {instanceID: 0}
+      baseUID: 672674304
+    - shaderProp: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 697565856
+    buildTargetSettings:
+    - serializedVersion: 2
+      buildTarget: 
+      textureWidth: 512
+      textureHeight: 512
+      textureFormat: 0
+      loadingBehavior: 1
+  deletedPrototypes: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
