@@ -69,6 +69,7 @@ namespace MidiJack
             }
         }
 
+#if UNITY_EDITOR_WIN
         void OnGUI()
         {
             EditorGUILayout.Space();
@@ -128,6 +129,28 @@ namespace MidiJack
                 temp += "\n" + message.ToString();
             EditorGUILayout.HelpBox(temp, MessageType.None);
         }
+#elif UNITY_EDITOR__OSX
+        void OnGUI()
+        {
+            var endpointCount = CountEndpoints();
+
+            // Endpoints
+            var temp = "Detected MIDI devices:";
+            for (var i = 0; i < endpointCount; i++)
+            {
+                var id = GetEndpointIdAtIndex(i);
+                var name = GetEndpointName(id);
+                temp += "\n" + id.ToString("X8") + ": " + name;
+            }
+            EditorGUILayout.HelpBox(temp, MessageType.None);
+
+            // Message history
+            temp = "Recent MIDI messages:";
+            foreach (var message in MidiDriver.Instance.History)
+                temp += "\n" + message.ToString();
+            EditorGUILayout.HelpBox(temp, MessageType.None);
+        }
+#endif
 
         void SetDeviceState(string deviceName, bool value)
         {
@@ -203,6 +226,7 @@ namespace MidiJack
             return Marshal.PtrToStringAnsi(MidiJackGetEndpointName(id));
         }
 
+#if UNITY_EDITOR_WIN
         [DllImport("MidiJackPlugin", EntryPoint = "MidiJackCloseAllDevices")]
         static extern void CloseDevices();
 
@@ -214,7 +238,8 @@ namespace MidiJack
 
         [DllImport("MidiJackPlugin", EntryPoint = "MidiJackRefreshDevices")]
         static extern void RefreshDevices();
+#endif
 
-        #endregion
+#endregion
     }
 }
