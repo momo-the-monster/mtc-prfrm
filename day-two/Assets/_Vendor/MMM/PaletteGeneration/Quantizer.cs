@@ -61,6 +61,7 @@ public class Quantizer : MMMSingleton<Quantizer> {
         }
 
         MMM.MMMColors.Instance.palette = colors;
+        if(OnPaletteUpdate != null) OnPaletteUpdate.Invoke(colors);
 
         // set target material textures
         foreach (var item in targetRenderers)

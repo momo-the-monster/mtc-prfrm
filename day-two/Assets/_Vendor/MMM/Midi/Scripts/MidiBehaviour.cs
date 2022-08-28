@@ -44,17 +44,20 @@ namespace MMM.Midi
 
         private void NoteOn(MidiChannel channel, int note, float velocity)
         {
-            HandleNoteOn((int)channel, note, velocity);
+            if(midiChannel == MidiChannel.All || midiChannel == channel)
+                HandleNoteOn((int)channel, note, velocity);
         }
 
         private void NoteOff(MidiChannel channel, int note)
         {
-            HandleNoteOff((int)channel, note);
+            if (midiChannel == MidiChannel.All || midiChannel == channel)
+                HandleNoteOff((int)channel, note);
         }
 
         private void ControlChange(MidiChannel channel, int knobNumber, float knobValue)
         {
-            HandleControlChange((int)channel, knobNumber, knobValue);
+            if (midiChannel == MidiChannel.All || midiChannel == channel)
+                HandleControlChange((int)channel, knobNumber, knobValue);
         }
         #endregion
 
@@ -70,7 +73,7 @@ namespace MMM.Midi
         #endregion
 
         #region Enable / Disable
-        public void OnEnable()
+        public virtual void OnEnable()
         {
             // Cache plugin instance
             plugin = MidiDriver.Instance;
@@ -112,6 +115,8 @@ namespace MMM.Midi
         #endregion
 
         #region data handling
+
+        [SerializeField] public MidiJack.MidiChannel midiChannel = MidiChannel.All;
         private void OnValidate()
         {
             durationIn = Mathf.Max(durationIn, 0);

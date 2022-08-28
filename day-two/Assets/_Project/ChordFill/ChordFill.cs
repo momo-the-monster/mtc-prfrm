@@ -44,6 +44,9 @@ public class ChordFill : MidiBehaviour {
             {
                 layout.preferredWidth = 0;
                 layout.DOPreferredSize(new Vector2(Screen.width * widthMult, Screen.height * heightMult), (durationIn > 0.1f) ? durationIn : 0.1f);
+                //layout.flexibleWidth = 0;
+                //layout.DOFlexibleSize(new Vector2(Screen.width * widthMult, Screen.height * heightMult), (durationIn > 0.1f) ? durationIn : 0.1f);
+
             }
 
             // Add to lookup

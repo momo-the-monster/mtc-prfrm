@@ -105,7 +105,7 @@ public class RoadBuilderMidi : MonoBehaviour {
 
     void MidiNoteOn(MidiChannel channel, int note, float velocity)
     {
-    //    if (channel != activeChannel) return;
+        if (channel != activeChannel) return;
 
         if (notesInChord[(int)channel].Count > 0)
         {

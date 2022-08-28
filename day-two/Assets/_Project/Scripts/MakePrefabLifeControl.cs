@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MMM.Midi;
 using DG.Tweening;
+using MidiJack;
 
 public class MakePrefabLifeControl : MidiBehaviour
 {
@@ -14,6 +15,9 @@ public class MakePrefabLifeControl : MidiBehaviour
 
     Dictionary<int, GameObject> noteObjects = new Dictionary<int, GameObject>();
 
+    public MidiChannel activeChannel = MidiChannel.All;
+    public Color color;
+
     MakePrefabLifeControl()
     {
         activeEvents = MidiEvents.NoteOn | MidiEvents.NoteOff;
@@ -21,9 +25,12 @@ public class MakePrefabLifeControl : MidiBehaviour
 
     public override void HandleNoteOn(int channel, int note, float velocity)
     {
-        Vector3 position = PositionFromFloat(GetNormalizedNote(note));
-        GameObject g = MakeAt(position);
-        noteObjects.Add(note, g);
+        if (activeChannel == MidiChannel.All || (int)activeChannel == channel)
+        {
+            Vector3 position = PositionFromFloat(GetNormalizedNote(note));
+            GameObject g = MakeAt(position);
+            noteObjects.Add(note, g);
+        }
     }
 
     Vector3 PositionFromFloat(float value)
@@ -42,21 +49,27 @@ public class MakePrefabLifeControl : MidiBehaviour
     {
         GameObject g = Instantiate(prefab, position, Quaternion.identity, container);
         g.transform.localPosition = position;
+        g.GetComponent<Renderer>().material.color = color;
         return g;
     }
 
     public override void HandleNoteOff(int channel, int note)
     {
-        if (noteObjects.ContainsKey(note))
+
+        if (activeChannel == MidiChannel.All || (int)activeChannel == channel)
         {
-            GameObject g = noteObjects[note];
-            noteObjects.Remove(note);
-            //DestroySimple(g);
-            DestroyTimed(g);
-        }
-        else
-        {
-            Debug.LogErrorFormat("Tried to remove note at {0} which is not in noteObjects", note);
+
+            if (noteObjects.ContainsKey(note))
+            {
+                GameObject g = noteObjects[note];
+                noteObjects.Remove(note);
+                //DestroySimple(g);
+                DestroyTimed(g);
+            }
+            else
+            {
+                Debug.LogErrorFormat("Tried to remove note at {0} which is not in noteObjects", note);
+            }
         }
     }
 

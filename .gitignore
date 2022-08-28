@@ -33,3 +33,9 @@ sysinfo.txt
 *.apk
 *.unitypackage
 day-one/Assets/MMM/Midi/Demos
+.idea/
+Logs/
+.vs/
+Library/
+obj/
+Temp/
